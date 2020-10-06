@@ -76,7 +76,7 @@ ggplot(mtcars, aes(x= am, y= mpg, fill=am))+geom_boxplot()+labs(fill="Transmissi
 ![plot of chunk unnamed-chunk-33](figure/unnamed-chunk-33-1.png)
 
 
-### Quantifying the Difference
+
 
 
 ```r
