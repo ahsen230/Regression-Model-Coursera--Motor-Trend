@@ -1,5 +1,5 @@
-# Regression-Model-Coursera--Motor-Trend
-In this project we explore the relationship between miles per gallon (MPG) and a set of variables from the Motor Trends car dataset. We are particularly interested in the following two questions:  Is an automatic or manual transmission better for MPG? How can we quantify the difference in MPG between manual and automatic transmissions?
+# Regression Model--Motor Trend
+In this project we explore the relationship between miles per gallon (MPG) and a set of variables from the Motor Trends car dataset.
 
 ## Executive Summary
 I work for Motor Trend, a magazine about the automobile industry. Looking at a data set of a collection of cars, they are interested in exploring the relationship between a set of variables and miles per gallon (MPG) (outcome). They are particularly interested in the following two questions:
@@ -85,11 +85,12 @@ ggpairs(mtcars,ggplot2::aes(color=am),
         lower = list(continuous = wrap("smooth", size = 1)))
 ```
 
-```
+
 
 ![plot of chunk unnamed-chunk-34](figure/unnamed-chunk-34-1.png)
-As we can multi-collinearity in the above plot, So that means we cannot fit the model with all the variables. 
-So we need to select only the important features. So for that We will step-wise regression method.
+
+As we can see multi-collinearity in the above plot, So that means we cannot fit the model with all the variables. 
+So we need to select only the important features. So for that We will use step-wise regression method also known as Backwards Regression.
 
 
 ```r
