@@ -77,7 +77,9 @@ ggplot(mtcars, aes(x= am, y= mpg, fill=am))+geom_boxplot()+labs(fill="Transmissi
 
 
 
+## Quantifying the difference
 
+At first we will look at the overall collinearity of our Dataset.
 
 ```r
 ggpairs(mtcars,ggplot2::aes(color=am),
@@ -98,8 +100,32 @@ model = step(lm(data = mtcars, mpg ~ . ),trace = FALSE)
 summary(model)
 ```
 
+```
+## 
+## Call:
+## lm(formula = mpg ~ wt + qsec + am, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -3.4811 -1.5555 -0.7257  1.4110  4.6610 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   9.6178     6.9596   1.382 0.177915    
+## wt           -3.9165     0.7112  -5.507 6.95e-06 ***
+## qsec          1.2259     0.2887   4.247 0.000216 ***
+## amManual      2.9358     1.4109   2.081 0.046716 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 2.459 on 28 degrees of freedom
+## Multiple R-squared:  0.8497,	Adjusted R-squared:  0.8336 
+## F-statistic: 52.75 on 3 and 28 DF,  p-value: 1.21e-11
+```
 
-Intercept is amAutomatic. As now we can clearly see the differnce between Manual and Automatic in Numbers.
+
+Intercept is amAutomatic. Which means that the origin is amAutomatic and the values of other features are calculated w.r.t to that origin. 
+ So now, we can clearly see the difference between Manual and Automatic in Numbers i.e. Cars with manual transmission have 2.9358 (say 3) more miles per gallon than automatic transmissions
 
 
 ### Residual Analysis
